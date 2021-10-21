@@ -1,0 +1,31 @@
+<button onclick="insert('c:/monitorpaths/folder2/file.txt')">folder2</button>
+<button onclick="insert('c:/monitorpaths/folder3/file.txt')">folder3</button>
+
+
+<script>
+
+
+    function insert(path)
+    {
+        var xhttp = new XMLHttpRequest(); 
+        xhttp.open("GET", "insert.php?path=" + path, true);
+        xhttp.send();
+    }
+
+
+
+    var xhttp = new XMLHttpRequest(); 
+    xhttp.onreadystatechange = function()
+    {   
+        if (this.readyState == 4 && this.status == 200)
+        {
+            xhttp.open("GET", "monitor.php?path=c:/monitorpaths/folder1", true);
+            xhttp.send();    
+        }
+    };
+
+    xhttp.open("GET", "monitor.php?path=c:/monitorpaths/folder1", true);
+    xhttp.send();
+    
+
+</script>
