@@ -1,0 +1,13 @@
+<button onclick="insert('c:/folder2/file.txt')">folder2</button>
+<button onclick="insert('c:/folder3/file.txt')">folder3</button>
+
+<script>
+
+    function insert(path)
+    {
+        var xhttp = new XMLHttpRequest(); 
+        xhttp.open("GET", "insert.php?path=" + path, true);
+        xhttp.send();
+    }
+    
+</script>
